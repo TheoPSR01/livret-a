@@ -117,7 +117,7 @@ def main(argv=None) -> int:
         print(f"livret-a : {exc}", file=sys.stderr)
         return 2
     fin = _d(args.solde) + sum((m for _, m in ops), Decimal(0)) + i
-    print(f"Intérêts {args.annee}     : {_fr(i)} €")
+    print(f"Intérêts {args.annee}  : {_fr(i)} €")
     print(f"Solde au 31/12 : {_fr(fin)} € (intérêts compris)")
     taux = sorted({str(taux_au(q)) for q in quinzaines(args.annee)}, key=Decimal)
     print("Taux appliqués : " + ", ".join(t.replace(".", ",") + " %" for t in taux))
